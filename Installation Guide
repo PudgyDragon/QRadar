@@ -94,25 +94,25 @@ lsblk (check that SDA partition remained after reboot)
 
 The partitions should look similar to this:
 
-Name	                          Size	   Type	    Mountpoint
-sda	                          39.3T	   disk	
----sda1	                    39.3T	   part	
-------storerhel-store	        31T	         lvm	    /store
-------storerhel-transient	  8T	         lvm	    /transient
-sdb	                          223.5G	   disk	
----sdb1	                    1G	         part	    /boot/efi
----sdb2	                    1G	         part	    /boot
----sdb3	                    8G	         part	    /recovery
----sdb4	                    144G	   part	
-------rootrhel-root	        15G	         lvm	    /
-------rootrhel-swap	        24G	         lvm	    [SWAP]
-------rootrhel-tmp	        15G	         lvm	    /tmp
-------rootrhel-storetmp	        15G	         lvm	    /storetmp
-------rootrhel-home	        25G	         lvm	    /home
-------rootrhel-opt	        15G	         lvm	    /opt
-------rootrhel-var_log_audit	  10G	         lvm	    /var/log/audit
-------rootrhel-var_log	        20G	         lvm	    /var/log
-------rootrhel-var	        5G	         lvm	    /var
+Name----------------------------Size---------Type---------Mountpoint
+sda-----------------------------39.3T--------disk	
+---sda1-------------------------39.3T--------part	
+------storerhel-store-----------31T----------lvm----------/store
+------storerhel-transient-------8T-----------lvm----------/transient
+sdb-----------------------------223.5G-------disk	
+---sdb1-------------------------1G-----------part---------/boot/efi
+---sdb2-------------------------1G-----------part---------/boot
+---sdb3-------------------------8G-----------part---------/recovery
+---sdb4-------------------------144G---------part	
+------rootrhel-root-------------15G----------lvm----------/
+------rootrhel-swap-------------24G----------lvm----------[SWAP]
+------rootrhel-tmp--------------15G----------lvm----------/tmp
+------rootrhel-storetmp---------15G----------lvm----------/storetmp
+------rootrhel-home-------------25G----------lvm----------/home
+------rootrhel-opt--------------15G----------lvm----------/opt
+------rootrhel-var_log_audit----10G----------lvm----------/var/log/audit
+------rootrhel-var_log----------20G----------lvm----------/var/log
+------rootrhel-var--------------5G-----------lvm----------/var
 
 Once RHEL setup and installation is complete, you can move on to installing the QRadar ISO onto the device.
 
