@@ -6,7 +6,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
 <table>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Installation%20Guide">Installation Guide</a>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/InstallationGuide.md">Installation Guide</a>
     </td>
     <td>
       <p>Installation guide for IBM QRadar on your own hardware, not hardware provided by IBM.</p>
