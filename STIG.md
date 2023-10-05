@@ -27,3 +27,67 @@
 - All raw flows information: /store/ariel/flows
 
 Check size of these directories via `du -sh /store/ariel/flows`. Ensure that the size on the system is the same on the off-board media. 
+
+## Creating Non-Root User
+- Open Putty or another terminal emulator
+- Enter DNS names or IP Address of QRadar Console, then click "open"
+- Login to QRadar Console as root user
+- Create `stiguser` or client username of choice
+  - `useradd -c 'Admin User' -d /home/stiguser -m -s /bin/bash stiguser`
+- Change new user password
+  - `passwd stiguser`
+- Verify no entries with the `NOPASSWD` statement are uncommented in the `/etc/sudoers` file
+  - `more /etc/sudoers | grep NOPASSWD`
+- After verifying no entries existed with the `NOPASSWD` statement uncommented, the next step is to add `STIGUSER` to the sudoers file
+  - Create `stiguser` file in `/etc/sudoers.d` directory
+  - `vi /etc/sudoers.d/stiguser`
+  - Type `i` (insert)
+  - `stiguser ALL=(ALL) ALL`
+  - Press ESC; the `--INSERT--` will disappear
+  - `:wq!`
+- Close Putty or terminal emulator
+- Open Putty to QRadar Console
+- Login as stiguser
+- Verify stiguser can elevate to root permissions
+  - `sudo su`
+- After verifying that stiguser can escalate to root permission, type `exit` to return to stiguser
+- Create SSH key pair for stiguser
+  - `ssh-keygen -b 4096 -t rsa`
+- Transfer ssh keys to managed host
+  - `ssh-copy-id stiguser@<ipaddress> -o StrictHostKeyChecking=no`
+- Test that the stiguser can login to the managed host without using a password
+  - `ssh stiguser@<ipaddress>`
+- After validating the console can login to the managed host without a password, type exit to return to the QRadar Console and proceed to the next section
+
+## Run Hardening Script
+
+- Login to the QRadar Console via Putty or other terminal emulator as root user
+- Change directories to `/opt/qradar/util/stig/bin`
+  - `cd /opt/qradar/util/stig/bin`
+- Run STIG script
+  - `./stig_harden.sh -a`
+- Verify completion of script
+- Reboot the Console
+  - `reboot`
+- Verify root user can no longer log directly into the Console by attempting to login as root
+- Login to QRadar Console with `stiguser` account
+- SSH from the Console to the EPFP via stiguser
+  - `ssh stiguser@<ipaddress>`
+- Sudo to root
+- Change directories to `/opt/qradar/util/stig/bin`
+- Run STIG script
+- Verify STIG script completed successfully
+- Reboot the managed host, this will bring you back to the Console
+- Wait a couple minutes, then attempt to login via stiguser from the console to the managed host
+- Having run the hardening script on the QRadar Console and managed hosts, validating the ability to login from the Console to the managed host, you may proceed to the next section
+
+## Editing Scripts
+
+
+## GRUB2 Configuration (BIOS)
+
+
+## GRUB2 Configuration (UEFI)
+
+
+## Modify Password Age for Non-system Accounts
