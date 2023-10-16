@@ -82,7 +82,54 @@ Check size of these directories via `du -sh /store/ariel/flows`. Ensure that the
 - Having run the hardening script on the QRadar Console and managed hosts, validating the ability to login from the Console to the managed host, you may proceed to the next section
 
 ## Editing Scripts
-
+- Prior to modifying `iptables_update.sl` script, create a copy of the file and place it within the `/home/stiguser` directory
+  - `cp /opt/qradar/bin/iptables_update.pl /home/stiguser`
+- After ensuring that a copy of the file is made, next you will edit the `iptables_update.pl` script via vi
+  - `vi /opt/qradar/bin/iptables_update.pl`
+- Once in edit mode, search for `INPUT`
+  - `/INPUT`
+- Press the enter key, you will be brought to the exact line which  needs to be modified
+- Press the `i` (insert) key, you will know you are in insert mode via the bottom banner saying `--INSERT--`
+- Change `INPUT ACCEPT [0:0]` to `INPUT DROP [0:0]`
+- Press the ESC key to exit editing mode, this will remove the `--INSERT--` banner
+- Save and exit from the `iptables_update.pl`
+  - `wq!`
+  - Enter
+- Run the `iptables_update.pl` script
+  - `/opt/qradar/bin/iptables_update.pl`
+- Next, the AIDE baseline will be created. Note, this will take some time to finish
+  - `aide --init`
+- You will know when the baseline is completed when the initialized statement is returned
+- To use the AIDE database, the `new` needs to be removed from the aide string, move the `aide.db.new.gz` to `aide.db.gz`
+  - `mv -f /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz`
+- Update aide database
+  - `aide --update`
+- Create a new baseline after updating it
+  - `mv -f /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz`
+- IMPORTANT NOTE: THE AIDE UPDATE AND CREATION OF NEW BASELINE MUST BE COMPLETED EACH AND EVERY TIME A NEW INSTALL, UNINSTALL, SYSTEM CONFIGURATION CHANGE OR A DEPLOY ACTION IS TAKEN
+- SSH from the Console to managed hosts. The next step is only to be complated on managed hosts
+- Once logged into the managed host, next will be to disable packet forwarding for IPv4
+  - `sysctl -w net.ipv4.ip_forward=0`
+- Disable packet forwarding for IPv6
+  - `sysctl -w net.ipv6.conf.all.forwarding=0`
+- Edit the `/etc/sysctl.conf` via vi
+  - `vi /eetc/sysctl.conf`
+- Scroll to the bottom of the file and type the `i` (insert) key, you will enter insert mode
+- Add the following lines to the bottom of the file
+  - `net.ipv4.ip_forward = 0`
+  - `net.ipv6.conf.all.forwarding = 0`
+- Press the ESC key to exit editing, this will remove the `--INSERT--` banner
+- Save and exit from editing the file
+  - `wq!`
+- Modify the syslog-ng.conf file to send all audit logs to the Event Processor or Processors
+  - `vi /etc/syslog-ng/syslog-ng.conf`
+- Search for local4.info, to ensure you modify the correct section
+  - `/local4.info`
+- You will be brought to the `local4.info` section
+- Modify the section with the following lines
+  - `destination remote_audit {udp("10.75.26.121" port (514)); };`
+  - `log { source(local); filter(local4_info); destination(remote_audit); };`
+- This completes the editing scripts section. Proceed to the following section
 
 ## GRUB2 Configuration (BIOS)
 
