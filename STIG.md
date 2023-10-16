@@ -204,6 +204,61 @@ Check size of these directories via `du -sh /store/ariel/flows`. Ensure that the
 - Verify the system is working and allows logins to the webpage by logging into the webpage
 
 ## GRUB2 Configuration (UEFI)
+### IMPORTANT NOTICE: Ensure that you have the latest QRadar 7.5.0 ISO, if this is a physical deployment ensure you have a live bootable USB created with Fedora Media Writer. If this is a virtual deployment, ensure the ISO is in an accessible datastore. These will be needed if the configuration is not done exactly as listed below. Modifying the GRUB2 configuration has the potential of breaking the ability to log into the system entirely. If this occurs, you must use the "Disaster Recovery after GRUB2 Modification" how to guide.
 
+- Backup and save all relevant GRUB2 configuration files. Tar up and compress the grub2 configurations prior to modification
+  - `tar -cvf /root/grub2backup.tar /etc/grub.d /etc/default/grub /boot/efi/EFI/redhat`
+- Verify the tar file exists prior to moving forward
+  - `ll /root/grub2backup.tar`
+- Create the grub password for stiguser, copy the contents of the password to a text file
+  - `grub2-mkpasswd-pbkdf2`
+- Modify the `/etc/grub.d/10_linux` file
+  - `vi /etc/grub.d/10_linux`
+- Locate the `CLASS` line
+- Press the `i` key to enter edit mode
+- Modify the end of the line from `--unrestricted` to `--users stiguser`
+- Press the ESC key to exit editing mode
+- Save and exit the file
+  - `wq!`
+- Next, the 01_user file will be modified via the following command
+  - `vi /etc/grub.d/01_users`
+- The following script will appear
+- ```
+  #!/bin/sh -e
+  cat << EOF
+  if [ -f \${prefix}/user.cfg ]; then
+    source \${prefix}/user.cfg
+    if [ -n "\${GRUB2_PASSWORD}" ]; then
+      set superusers="root"
+      export superusers
+      password_pbkdf2 root \${GRUB2_PASSWORD}
+    fi
+  fi
+  EOF
+  ```
+- Type `i` to enter editing mode
+- Modify the following areas of the script. This will change the superuser from root to stiguser
+  - `set superusers="stiguser"`
+  - `password_pbkdf2 stiguser \${GRUB2_PASSWORD}`
+- Press the ESC key to exit editing mode
+- Save and exit the file
+  - `wq!`
+- Next, manually create the `user.cfg` file within the `/boot/efi/EFI/redhat` directory. This can be done via the following commands
+  - `vi user.cfg` (if you are already in the `/boot/efi/EFI/redhat` directory)
+  - `vi /boot/efi/EFI/redhat/user.cfg`
+- Copy and paste the grub2 password created earlier into the `user.cfg`
+- Press the ESC key to exit editing mode
+- Save and exit the file
+  - `wq!`
+- Recreate the grub configuration via the following command
+  - `grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg`
+- Verify that the GRUB2 password is within the user.cfg
+  - `grep -iw grub2_password /boot/efi/EFI/redhat/user.cfg`
+- Next verify that the "superusers" within the grub.cfg is set to `stiguser` or the user that was created at the beginning of the STIG process
+  - `grep -iw "superusers" /boot/efi/EFI/redhat/grub.cfg`
+- After verifying the grub password is correct and the grub.cfg is configured for stiguser, reboot the appliance
+- Once the system has rebooted you will need to get access to the console. If this is a physical server, go to the datacenter and access the server. If this is a virtual appliance access the VM via the hypervisor and attach to the console
+- Once at the console you will enter the username, stiguser, and password
+- After entering the username and password, the system will boot up normally
 
 ## Modify Password Age for Non-system Accounts
