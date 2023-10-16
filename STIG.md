@@ -132,7 +132,76 @@ Check size of these directories via `du -sh /store/ariel/flows`. Ensure that the
 - This completes the editing scripts section. Proceed to the following section
 
 ## GRUB2 Configuration (BIOS)
+### IMPORTANT NOTICE: Ensure that you have the latest QRadar 7.5.0 ISO, if this is a physical deployment ensure you have a live bootable USB created with Fedora Media Writer. If this is a virtual deployment, ensure the ISO is in an accessible datastore. These will be needed if the configuration is not done exactly as listed below. Modifying the GRUB2 configuration has the potential of breaking the ability to log into the system entirely. If this occurs, you must use the "Disaster Recovery After GRUB2 Modification" how to guide.
 
+- Backup and save all relevant GRUB2 configuration files. Tar up and compress the grub2 configurations, prior to modification
+  - `tar -cvf /root/grub2backup.tar /etc/grub.d /etc/default/grub /boot/grub2`
+- Verify the tar file exists, prior to moving forward
+  - `ll /root/grub2backup.tar`
+- Create GRUB2 password for `stiguser` login, copy and paste the password to a text file
+  - `grub2-mkpasswd-pbkdf2`
+- After configuring the GRUB2 password, the next step is to modify the 10_linux file via vi
+  - `vi /etc/grub.d/10_linux`
+- Search for `--unrestricted`
+  - `/unrestricted`
+- Type `i` for insert
+- Remove the `--unrestricted` and replace with `--users stiguser`. Setting the `--users` to stiguser
+- Press the ESC key to exit editing mode
+- Save and exit the file
+  - `wq!`
+- Next the `01_user` file will be modified via the following command
+  - `vi /etc/grub.d/01_users`
+- The following script will appear
+- ```
+  #!/bin/sh -e
+  cat << EOF
+  if [ -f \${prefix}/user.cfg ]; then
+    source \${prefix}/user.cfg
+    if [ -n "\${GRUB2_PASSWORD}" ]; then
+      set superusers="root"
+      export superusers
+      password_pbkdf2 root \${GRUB2_PASSWORD}
+    fi
+  fi
+  EOF
+  ```
+- Type `i` to enter editing mode
+- Modify the following areas of the script. This will change the superuser from root to stiguser
+  - `set superusers="stiguser"`
+  - `password_pbkdf2 stiguser \${GRUB2_PASSWORD}`
+- Press the ESC key to exit editing mode
+- Save and edit the file
+  - `wq!`
+- Next, manually create the `user.cfg` file within the `/boot/grub2` directory. This can be done via the following commands
+  - `vi user.cfg` (if you are already in the `/boot/grub2` directory)
+  - `vi /boot/grub2/user.cfg`
+- Copy and paste the grub2 password created in step 3 into the user.cfg
+- Press the ESC key to exit editing mode
+- Save and exit the file
+  - `wq!`
+- Recreate the grub configuration via the following command
+  - `grub2-mkconfig -o /boot/grub2/grub.cfg`
+- Copy the `user.cfg` which was created during the password creation to the `/recovery/grub2` partition
+  - `cp /boot/grub2/user.cfg /recover/grub2`
+- Verify root is set as superuser within `/boot/grub2/grub.cfg`
+  - `grep -iw "superusers" /boot/grub2/grub.cfg`
+- Modify the /recovery/grub2/user.cfg
+  - `vi /recovery/grub2/grub.cfg`
+- Search for "Normal System"
+  - `/"Normal System"`
+- Type `i` to insert and begin editing
+- Add `--user stiguser` after `menuentry "Normal System"`
+- Add `--user root` after `menuentry "Factory re-install`
+- Press ESC key to exit editing mode
+- Save and exit the file
+  - `wq!`
+- Recreate the recover grub2 config
+  - `grub2-mkconfig -o /recovery/grub2/grub.cfg`
+- Prior to rebooting the server, ensure you have physical access and go to the datacenter. You will not be able to access remotely, due to grub requiring a password now to boot normally. Reboot the server to test that GRUB halts the boot up of the system and requires the root password
+  - `reboot`
+- The bootup should be halted and will prompt for username and password. The username will be root and the password is the one set earlier
+- If the GRUB2 configuration was done properly, after entering the password, the system should boot up normally
+- Verify the system is working and allows logins to the webpage by logging into the webpage
 
 ## GRUB2 Configuration (UEFI)
 
