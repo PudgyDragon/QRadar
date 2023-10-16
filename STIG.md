@@ -262,3 +262,35 @@ Check size of these directories via `du -sh /store/ariel/flows`. Ensure that the
 - After entering the username and password, the system will boot up normally
 
 ## Modify Password Age for Non-system Accounts
+### IMPORTANT NOTE: A lot of individuals get confused as to what is a system account and what is not. The easiest way to figure this out is via looking at the /etc/logins.def. RHEL 7 has the following values, presented below whith define a user and a system account via UID and GID
+```
+# Min/max values for automatic uid selection in useradd
+#
+UID_MIN                    1000
+UID_MAX                   60000
+# System accounts
+SYS_UID_MIN                 201
+SYS_UID_MAX                 999
+
+#
+# Min/max values for automatic gid selection in groupadd
+#
+GID_MIN                    1000
+GID_MAX                   60000
+# System accounts
+SYS_GID_MIN                 201
+SYS_GID_MAX                 999
+```
+Any account that has a UID value greated than 1000 and a GID value greater than 1000 is a user account and not system. To validate which users, you can view the /etc/passwd file.
+
+- After having done the prep work previously listed, enter the following command to verify user accounts which don't have a minimum password age of 1 day configured
+  - `awk -F: '$4 < 1 {print $1 "" $4}' /etc/shadow`
+- If any accounts were to be returned not meeting the minimum password age of 1 day, the command below is how you would fix that issue
+  - `chage -m 1 stiguser`
+- Verify that no user accounts return having a maximum password age of 60 days
+  - `awk -F: '$5 > 60 {print $1 "" $5}' /etc/shadow`
+- If a user account was returned, then you can use the following command to fix the account
+  - `chage -M 60 stiguser`
+- Finally, verify that no two users have a duplicate UID
+  - `pwck -rq`
+- The last step concludes the STIG QRadar guide. The system is now STIG compliant.
