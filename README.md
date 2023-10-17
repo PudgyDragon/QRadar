@@ -132,4 +132,12 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <p>Routing rules guide.</p>
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/LDAP_SSL_Error.md">LDAP SSL Error</a>
+    </td>
+    <td>
+      <p>Troubleshooting LDAP SSL Error within User Analytics User Import</p>
+    </td>
+  </tr>
 </table>
