@@ -22,6 +22,14 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/STIG.md">STIG Guide</a>
+    </td>
+    <td>
+      <p>Guide for doing QRadar STIG.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Docker%20Blocked">Docker Blocked</a>
     </td>
     <td>
