@@ -1,7 +1,8 @@
 Modified guide for exporting custom content, including DSM and Reports. 
 
-A simplified version can be found at:
-https://www.ibm.com/docs/en/qsip/7.5?topic=editor-exporting-contents-as-package
+Simplified versions of these methods can be found at:
+Export: https://www.ibm.com/docs/en/qsip/7.5?topic=editor-exporting-contents-as-package
+Import: https://www.ibm.com/docs/en/qsip/7.5?topic=content-importing-by-using-management-script
 
 Login to the console through SSH and run the following command to start the Content Management Tool:
 /opt/qradar/bin/contentManagement.pl
@@ -56,7 +57,12 @@ You will then run the following command to export the contents into the file you
 
 This will export the desired contents and place them in a zip folder in the same location as your original text file.
 From here, you can use WinSCP to transfer the file from the console to whatever location on your local host. Please
-remember to remove any files that were created from the console whne you are done using:
+remember to remove any files that were created from the console when you are done using:
 
 rm <file>
 (Example: rm reportexport.txt)
+
+When you want to import them, place them on the desired asset through whatever means you use (WinSCP in this instance).
+cd to the location where your export file is at, and run the following command:
+/opt/qradar/bin/contentManagement.pl --action import -f fgroup-ContentExport-20120418163707.tar.gz
+replacing the .tar.gz file with the name of your own
