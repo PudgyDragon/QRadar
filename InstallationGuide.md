@@ -38,7 +38,7 @@ https://fedoraproject.org/workstation/download/
       SDB4: / - 15GB (lvm)
             swap - 24GB (lvm)
             /tmp - 15GB (lvm)
-            /storetmp - 15GP (lvm)
+            /storetmp - 15GB (lvm)
             /home - 25GB (lvm)
             /opt - 15GB (lvm)
             /var/log/audit - 10GB (lvm)
