@@ -137,7 +137,15 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/LDAP_SSL_Error.md">LDAP SSL Error</a>
     </td>
     <td>
-      <p>Troubleshooting LDAP SSL Error within User Analytics User Import</p>
+      <p>Troubleshooting LDAP SSL Error within User Analytics User Import.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/ApplicationError.md">Application Error</a>
+    </td>
+    <td>
+      <p>Application error when trying to us the 'Group By' feature when running searches.</p>
     </td>
   </tr>
 </table>
