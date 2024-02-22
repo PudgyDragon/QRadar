@@ -1,8 +1,7 @@
 # IBM QRadar
 Creating a place where people can find installation, setup, and troubleshooting for IBM QRadar based off what my team has experienced. Hoping to create a page for Blue Teams to find answers to problems they may experience similar to ours.
 
-# Table of Contents
-
+# Guides
 <table>
   <tr>
     <td>
@@ -27,7 +26,51 @@ Creating a place where people can find installation, setup, and troubleshooting 
     <td>
       <p>Guide for doing QRadar STIG.</p>
     </td>
+  </tr>  
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Delete%20All%20Watson%20Investigations">Delete All Watson Investigations</a>
+    </td>
+    <td>
+      <p>Last resort, not recommended. Guide for deleting all Watson investigations.</p>
+    </td>
+  </tr>  
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Email%20Server%20Setup">Email Server Setup</a>
+    </td>
+    <td>
+      <p>Guide for setting up an email server on QRadar to allow emails out from the SIEM.</p>
+    </td>
+  </tr>  
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Export%20Contents%20as%20a%20Package">Export Contents as a Package</a>
+    </td>
+    <td>
+      <p>Modified guide for exporting custom content, including DSM and reports.</p>
+    </td>
+  </tr>  
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Root%20Password%20Change">Root Password Change</a>
+    </td>
+    <td>
+      <p>Guide for changing the root password</p>
+    </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Routing%20Rules">Routing Rules</a>
+    </td>
+    <td>
+      <p>Routing rules guide.</p>
+    </td>
+  </tr>  
+</table>
+
+# Troubleshooting
+<table>
   <tr>
     <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Docker%20Blocked">Docker Blocked</a>
@@ -54,26 +97,10 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Delete%20All%20Watson%20Investigations">Delete All Watson Investigations</a>
-    </td>
-    <td>
-      <p>Last resort, not recommended. Guide for deleting all Watson investigations.</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Core%20Services%20Not%20Starting">Core Services Not Starting</a>
     </td>
     <td>
       <p>If services aren't starting after an update installation, this guide may help you.</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Email%20Server%20Setup">Email Server Setup</a>
-    </td>
-    <td>
-      <p>Guide for setting up an email server on QRadar to allow emails out from the SIEM.</p>
     </td>
   </tr>
   <tr>
@@ -102,34 +129,10 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Export%20Contents%20as%20a%20Package">Export Contents as a Package</a>
-    </td>
-    <td>
-      <p>Modified guide for exporting custom content, including DSM and reports.</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Cisco%20ISE%20pxGrid%20Failed">Cisco ISE pxGrid Failed</a>
     </td>
     <td>
       <p>Simple guide for fixing failure to save QRadar/deployment settings for Cisco ISE pxGrid.</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Root%20Password%20Change">Root Password Change</a>
-    </td>
-    <td>
-      <p>Guide for changing the root password</p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Routing%20Rules">Routing Rules</a>
-    </td>
-    <td>
-      <p>Routing rules guide.</p>
     </td>
   </tr>
   <tr>
@@ -146,6 +149,18 @@ Creating a place where people can find installation, setup, and troubleshooting 
     </td>
     <td>
       <p>Application error when trying to us the 'Group By' feature when running searches.</p>
+    </td>
+  </tr>
+</table>
+
+# Feature Enrichments
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/tree/main/Pulse%20Dashboards">Pulse Dashboards</a>
+    </td>
+    <td>
+      <p>JSON for Pulse Dashboard widgets based on QRadar Vulnerablity Manager being installed, and Tenable ACAS integrated.</p>
     </td>
   </tr>
 </table>
