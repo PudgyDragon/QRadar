@@ -8,7 +8,7 @@ Click "Add"
 Enter a hostname (it can't be an IP)
 Enter the port as 25 (default port may be different)
 Add a description
-There shouldn't be a need for usernameor password unless otherwise specified
+There shouldn't be a need for username or password unless otherwise specified
 TLS should be enabled
 Click "Save"
 
