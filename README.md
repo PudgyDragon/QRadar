@@ -66,7 +66,15 @@ Creating a place where people can find installation, setup, and troubleshooting 
     <td>
       <p>Routing rules guide.</p>
     </td>
-  </tr>  
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/InterimFixUpdateGuide.md">Basic Interim Fix Update Guide</a>
+    </td>
+    <td>
+      <p>Basic guide for installing interim fix to QRadar; bare bones, straight to the point.</p>
+    </td>
+  </tr>
 </table>
 
 # Troubleshooting
