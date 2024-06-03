@@ -151,6 +151,14 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <p>Application error when trying to us the 'Group By' feature when running searches.</p>
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/InterimFixIssues.md">Interim Fix Issues</a>
+    </td>
+    <td>
+      <p>Issues that were preventing an Interiim Fix from occurring, to include: full /var/log folders, unable to deploy changes.</p>
+    </td>
+  </tr>
 </table>
 
 # Feature Enrichments
