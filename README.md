@@ -169,7 +169,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/InterimFixIssues.md">Interim Fix Issues</a>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/InterimFixIssues.md">Interim Fix Issues (Update Package 7, Fix 6)</a>
     </td>
     <td>
       <p>Issues that were preventing an Interiim Fix from occurring, to include: full /var/log folders, unable to deploy changes.</p>
