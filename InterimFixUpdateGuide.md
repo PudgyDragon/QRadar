@@ -20,3 +20,9 @@ Getting lazy and don't want to keep finding the guide for Interim Fixes when the
    - `umount /media/updates`
 2. Clear browser cache
 3. Delete SFS file from all appliances
+
+## Verify Fix Number
+You can run the following command to verify that all servers have been brought up to the Interim Fix you have applied:
+```
+/opt/qradar/support/all_servers.sh -C "/opt/qradar/bin/myver -v | grep Interim"
+```
