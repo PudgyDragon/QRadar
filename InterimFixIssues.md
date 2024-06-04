@@ -1,4 +1,4 @@
-# This is a guide for a few issues that occurred when attempting to do an interim fix.
+# This is a guide for a few issues that occurred when attempting to do an interim fix for Update Package 7 Interim Fix 6.
 
 ## Issues
 When logging in to the GUI, I noticed there were undeployed changes, but when I tried to deploy them, I kept getting an error that they couldn't be deployed. 
