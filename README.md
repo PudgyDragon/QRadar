@@ -13,6 +13,14 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/UpdateRHEL8.md">Update Package 8 (RHEL 8) Upgrade</a>
+    </td>
+    <td>
+      <p>Quick and dirty guide for updating your QRadar device to RHEL 8.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Data%20Node%20Links">Data Node Links</a>
     </td>
     <td>
