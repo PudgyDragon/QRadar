@@ -4,5 +4,5 @@ that came up during the Upgrade to RHEL 8. Something along the lines of:
 ```
 Cliniq has dected unresolved patch-sensitve issues. You must resolve these issues before continuing.
 ```
-This time it had to do with a file in `/store/jeap/` that had a naming convention of `ariel_proxy`. By deleting the `.gz` file, we were able to
+This time it had to do with a file in `/store/jheap/` that had a naming convention of `ariel_proxy`. By deleting the `.gz` file, we were able to
 successfully run the `/media/updates/installer` without issue.
