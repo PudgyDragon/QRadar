@@ -51,6 +51,7 @@ But, if you're anything like me you don't want to have to scroll through all the
 12. Delete SFS file from all appliances
 
 ## Possible issues
+### Issue 1
 We encountered an issue on some devices. The issue was something along the lines of:
 ```
 Cliniq has detected unresolved patch-sensitive issues. You must resolve these issues before continuing.
@@ -60,3 +61,12 @@ For each file found, run: rm <dump_file>
 The dump files for us were in `/store/jheap`, and we needed to completely remove any folder with the naming convention `ccpp-`.
 If you have similar issues, make sure to note what folder and what file is causing the issue. Deleting the files/folders
 should get you back on track, in which you can run `/media/updates/installer` again to see if it has been resolved.
+
+### Issue 2
+When running the `/media/updates/installer --leapp-only`, the STIG preventing root login was causing it to have issues running. You can fix this by changing the sshd_config
+```
+vim /etc/ssh/sshd_config
+PermitRootLogin yes
+systemctl restart sshd
+```
+Changing the config from `no` to `yes` and restarting the service will solve this issue.
