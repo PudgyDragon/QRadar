@@ -83,6 +83,14 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <p>Basic guide for installing interim fix to QRadar; bare bones, straight to the point.</p>
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/FIPSenable.md">Enabling FIPS</a>
+    </td>
+    <td>
+      <p>Super quick guide for enabling FIPS after RHEL 8 upgrade.</p>
+    </td>
+  </tr>
 </table>
 
 # Troubleshooting
