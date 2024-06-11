@@ -191,6 +191,14 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <p>Issue that was preventing an Interiim Fix from occurring.</p>
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Troubleshooting/IO_Error.md">IO Error</a>
+    </td>
+    <td>
+      <p>IO Error on localhost:32006 when searching.</p>
+    </td>
+  </tr>
 </table>
 
 # Feature Enrichments
