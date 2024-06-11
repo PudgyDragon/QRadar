@@ -5,7 +5,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
 <table>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/InstallationGuide.md">Installation Guide</a>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/InstallationGuide.md">Installation Guide</a>
     </td>
     <td>
       <p>Installation guide for IBM QRadar on your own hardware, not hardware provided by IBM.</p>
@@ -13,7 +13,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/UpdateRHEL8.md">Update Package 8 (RHEL 8) Upgrade</a>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/UpdateRHEL8.md">Update Package 8 (RHEL 8) Upgrade</a>
     </td>
     <td>
       <p>Quick and dirty guide for updating your QRadar device to RHEL 8.</p>
@@ -21,7 +21,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Data%20Node%20Links">Data Node Links</a>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/Data%20Node%20Links">Data Node Links</a>
     </td>
     <td>
       <p>Guide for adding data nodes to console and event processor.</p>
@@ -29,10 +29,10 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/STIG.md">STIG Guide</a>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/STIG.md">STIG Guide</a>
     </td>
     <td>
-      <p>Guide for doing QRadar STIG.</p>
+      <p>Guide for doing QRadar STIG for 7.5.0 Update 6.</p>
     </td>
   </tr>  
   <tr>
