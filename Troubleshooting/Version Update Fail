@@ -1,5 +1,13 @@
 During an upgrade between QRadar versions, the following error may occur based on your organization.
 
+
+
+
+
+
+**** RHEL 7 ONLY ****
+
+
 [ERROR] (-i-testmode) sql pretest errored, halting. [6/9] Install & Upgrade Packages failed to complete successfully.
 Errors:
 Failed yum transaction test
