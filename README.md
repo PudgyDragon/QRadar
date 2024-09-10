@@ -91,6 +91,14 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <p>Super quick guide for enabling FIPS after RHEL 8 upgrade.</p>
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/LostPassword.md">Lost Password</a>
+    </td>
+    <td>
+      <p>Guide for how to reset your password for root or any other user at grub if you lost or forgot it.</p>
+    </td>
+  </tr>
 </table>
 
 # Troubleshooting
