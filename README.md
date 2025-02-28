@@ -1,7 +1,8 @@
 # IBM QRadar
 Creating a place where people can find installation, setup, and troubleshooting for IBM QRadar based off what my team has experienced. Hoping to create a page for Blue Teams to find answers to problems they may experience similar to ours.
 
-# Guides
+# Table of Contents
+## Guides
 <table>
   <tr>
     <td>
@@ -101,7 +102,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
 </table>
 
-# Troubleshooting
+## Troubleshooting
 <table>
   <tr>
     <td>
@@ -209,7 +210,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
   </tr>
 </table>
 
-# Feature Enrichments
+## Feature Enrichments
 <table>
   <tr>
     <td>
