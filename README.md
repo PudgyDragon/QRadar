@@ -106,6 +106,14 @@ Creating a place where people can find installation, setup, and troubleshooting 
 <table>
   <tr>
     <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Troubleshooting/Failed_to_Locate_SFS.md">Update Failed to Locate SFS</a>
+    </td>
+    <td>
+      <p>"ERROR: Failed to locate the SFS patch file at..." during an update, not allowing it to start.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Troubleshooting/Docker%20Blocked">Docker Blocked</a>
     </td>
     <td>
