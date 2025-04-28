@@ -9,7 +9,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/InstallationGuide.md">Installation Guide</a>
     </td>
     <td>
-      <p>Installation guide for IBM QRadar on your own hardware, not hardware provided by IBM.</p>
+      <p>Installation guide for IBM QRadar on your own hardware, not hardware provided by IBM. This guide is meant for those who have both SSD and HDD drives.</p>
     </td>
   </tr>
   <tr>
