@@ -205,7 +205,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Troubleshooting/InterimFix3Issues.md">Interim Fix Issues (Update Package 8, Fix 3)</a>
     </td>
     <td>
-      <p>Issue that was preventing an Interiim Fix from occurring.</p>
+      <p>Issue that was preventing an Interim Fix from occurring.</p>
     </td>
   </tr>
   <tr>
