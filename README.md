@@ -197,7 +197,7 @@ Creating a place where people can find installation, setup, and troubleshooting 
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Troubleshooting/InterimFixIssues.md">Interim Fix Issues (Update Package 7, Fix 6)</a>
     </td>
     <td>
-      <p>Issues that were preventing an Interiim Fix from occurring, to include: full /var/log folders, unable to deploy changes.</p>
+      <p>Issues that were preventing an Interim Fix from occurring, to include: full /var/log folders, unable to deploy changes.</p>
     </td>
   </tr>
   <tr>
