@@ -1,5 +1,5 @@
 # IBM QRadar Installation Guide
-This is an installation guide for IBM QRadar on your own hardware that is not provided by IBM. Hardware used in this guide usesa combination of SSD and HDD. The initial RHEL install is done on the SSD drives. After which, QRadar partitions are created on the HDD drives and the installation can take place.
+This is an installation guide for IBM QRadar on your own hardware that is not provided by IBM. Hardware used in this guide uses a combination of SSD and HDD. The initial RHEL install is done on the SSD drives. After which, QRadar partitions are created on the HDD drives and the installation can take place.
 
 Create a USB with a RHEL OS using Fedora Media Writer, which can be downloaded at:
 https://fedoraproject.org/workstation/download/
