@@ -6,9 +6,9 @@
 <table>
   <tr>
     <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/InstallationGuide.md">Installation Guide</a>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/Installation2025.md">Installation Guide</a>
     </td>
-    <td>Installation guide for IBM QRadar on your own hardware, not hardware provided by IBM. This guide is meant for those who have both SSD and HDD drives.</td>
+    <td>New and improved installation guide created October 2025 using QRadar 7.5 UP13 iso on RHEL 8.10. Guide covers RHEL installation and recommendations.</td>
   </tr>
   <tr>
     <td>
