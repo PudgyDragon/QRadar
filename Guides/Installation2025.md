@@ -270,8 +270,21 @@ Once complete, it will prompt you to reboot the system, allowing you to move on 
 
 
 <h2>QRadar Installation</h2>
-<p>When I'm not tired I will continue working the rest of this guide. Hopefully over the weekend. Here is some layout though:</p>
-<p>mkdir, mount, run script, reboot, repeat</p>
+<p>To start the installation, you will need to SCP the iso file onto your server. After that is complete, create the <code>cdrom</code> mount point for it to be mounted, move the iso into <code>storetmp</code>, mount it, and run the setup script:</p>
+<pre><code>
+  mkdir /media/cdrom
+  mv qradar.iso /storetmp/
+  mount -o loop /storetmp/qradar.iso /media/cdrom
+  /media/cdrom/setup  
+</code></pre>
+<p>The initial run will disable SELinux for you, and prompt you to <code>reboot</code> your device:</p>
+<pre><code>reboot now</code></pre>
+<p>Once it has come back up, you will need to mount the iso and rerun the setup script to complete the installation process:</p>
+<pre><code>
+  mount -o loop /storetmp/qradar.iso /media/cdrom
+  /media/cdrom/setup
+</code></pre>
+<p>This will lead into the next sections, where you will determine which type of QRadar device you would like to configure.</p>
 
 <h3>Console</h3>
 <p>Installation of a Console</p>
