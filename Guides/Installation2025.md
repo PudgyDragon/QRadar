@@ -287,17 +287,19 @@ Once complete, it will prompt you to reboot the system, allowing you to move on 
 <p>This will lead into the next sections, where you will determine which type of QRadar device you would like to configure.</p>
 
 <h3>Console</h3>
-<p>Installation of a Console</p>
+<p>To configure a device as a Console, you will choose the Software Installation option, and choose to create a Console. Go through the setup wizard to configure all your settings. In the end, it will prompt you to keep or change your admin and root password. The admin it refers to is the GUI admin.</p>
 
 <h3>Application Host</h3>
-<p>Installation of an App Host</p>
+<p>To configure a device as an Application Host, choose the Application Host option (not software). Go through the setup wizard to configure all your settings, just like the console. The difference will be that it will only prompt you to change the root password for it if you want to, but you don't have to.</p>
 
 <h3>Event/Flow Processors</h3>
-<p>Installation of Event/Flow Processors</p>
+<p>To install an Event or Flow Processor, choose teh Software Installation option, going through the wizard and choosing whether you want to create an Event or Event Flow processor (the reason for not covering collectors is because an IBM engineer has told me that collectors aren't really needed, and having a processor to collect and process is perfectly fine). Again, you will be prompted to keep or change the root password.</p>
 
-<h3>High Availability</h3>
-<p>HA device installation</p>
+<h3>High Availability Device</h3>
+<p>This one will be a little different. You will need to choose to create a High Availability Device, not the software installation. It will ask you whether or not it is for a console. Go through the wizard as normal to configure settings. It will ask you what the IP address is for the Primary host that it will be Secondary to. I can't remember if it's required, but it's good practice to use an IP on the same subnet as your Primary. The one thing I would recommend for this would be to make sure you <strong>CHANGE THE ROOT PASSWORD</strong> to only contain lower and uppercase letters. The reason for this is because when you pair HA devices, issues can arise from the Secondary device having too complex of a password. Once they're paired, you can change it back in the CLI to your company standards. If you are doing HA in a STIG environment, save yourself the headache and DON'T PAIR devices until you have gone through my STIG guide, or through IBM or your own STIG guide.</p>
 
 <h3>QNI</h3>
-<p>Installation of QNI</p>
+<p>For this, you will again choose a Software Installation and choose the QRadar Network Insights installation, going through the same wizard to configure your device settings, once again choosing whether or not to change root password in the end.</p>
 
+<h2>Complete</h2>
+<p>Simple as that. Hopefully this guide helped you get through installation of any or all of those devices. I am hoping to have a STIG guide published for RHEL 8 relatively soon.</p>
