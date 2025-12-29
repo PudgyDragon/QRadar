@@ -12,6 +12,12 @@
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/STIG_2025.md">NEW STIG Guide</a>
+    </td>
+    <td>NEW STIG guide used for QRadar 7.5.0 UP14.</td>
+  </tr> 
+  <tr>
+    <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/UpdateRHEL8.md">Update Package 8 (RHEL 8) Upgrade</a>
     </td>
     <td>Quick and dirty guide for updating your QRadar device to RHEL 8.</td>
@@ -21,13 +27,7 @@
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/Data%20Node%20Links">Data Node Links</a>
     </td>
     <td>Guide for adding data nodes to console and event processor.</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/STIG.md">STIG Guide</a>
-    </td>
-    <td>Guide for doing QRadar STIG for 7.5.0 Update 6.</td>
-  </tr>  
+  </tr>   
   <tr>
     <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/Delete%20All%20Watson%20Investigations">Delete All Watson Investigations</a>
