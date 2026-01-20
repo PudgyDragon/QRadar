@@ -15,7 +15,13 @@
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/STIG_2025.md">NEW STIG Guide</a>
     </td>
     <td>NEW STIG guide used for QRadar 7.5.0 UP14.</td>
-  </tr> 
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/HA_Crossover_Cable.md">Crossover Cable</a>
+    </td>
+    <td>Guide for configuring crossover cables between your HA pairs.</td>
+  </tr>
   <tr>
     <td>
       <a href="https://github.com/PudgyDragon/QRadar/blob/main/Guides/UpdateRHEL8.md">Update Package 8 (RHEL 8) Upgrade</a>
