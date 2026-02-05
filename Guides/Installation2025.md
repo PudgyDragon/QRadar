@@ -130,7 +130,7 @@ used are the SSD only.</p>
       </li>
       <li>sda (standard)
         <ul>
-          <li>/recover - 30G</li>
+          <li>/recovery - 30G</li>
         </ul>
       </li>
       <li>storerhel (xfs)
@@ -183,7 +183,7 @@ so that you don't have to scroll up and down, here it is modified:</p>
       </li>
       <li>sda (standard)
         <ul>
-          <li>/recover - 30G</li>
+          <li>/recovery - 30G</li>
         </ul>
       </li>
       <li>storerhel (xfs)
@@ -234,7 +234,7 @@ doesn't exist. For your convenience, here it is modified:</p>
       </li>
       <li>sda (standard)
         <ul>
-          <li>/recover - 30G</li>
+          <li>/recovery - 30G</li>
         </ul>
       </li>
       <li>storerhel (xfs)
